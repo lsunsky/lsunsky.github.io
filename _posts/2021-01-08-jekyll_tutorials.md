@@ -18,7 +18,7 @@ int main()
 {% endhighlight %}
 ```
 > 显示行数
-{% highlight c++ %}
+{% highlight c++ linenos%}
 int main()
 {
 	return 0;
