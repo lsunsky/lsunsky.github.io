@@ -2,20 +2,187 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sunsky</title>
-    <description>欢迎来到我的个人站~</description>
+    <description>所见即所得~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Jan 2021 15:44:14 +0800</pubDate>
-    <lastBuildDate>Fri, 08 Jan 2021 15:44:14 +0800</lastBuildDate>
+    <pubDate>Fri, 15 Jan 2021 22:33:04 +0800</pubDate>
+    <lastBuildDate>Fri, 15 Jan 2021 22:33:04 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
-        <title>Jekyll_tutorials</title>
+        <title>A Draft Post</title>
         <description>&lt;h1 id=&quot;this-is-a-test&quot;&gt;this is a test&lt;/h1&gt;
+</description>
+        <pubDate>Fri, 08 Jan 2021 18:52:12 +0800</pubDate>
+        <link>http://localhost:4000/2021/01/a-draft-post/</link>
+        <guid isPermaLink="true">http://localhost:4000/2021/01/a-draft-post/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Win10安装Ubuntu子系统</title>
+        <description>&lt;h3 id=&quot;介绍&quot;&gt;介绍&lt;/h3&gt;
+&lt;p&gt;在win10系统上安装Ubuntu子系统及GUI。&lt;/p&gt;
+&lt;h3 id=&quot;安装ubuntu子系统&quot;&gt;安装Ubuntu子系统&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;以管理员身份打开PowerShell&lt;/li&gt;
+  &lt;li&gt;为Linux启用win10子系统
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;启用虚拟机功能
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;重启计算机，打开&lt;code class=&quot;highlighter-rouge&quot;&gt;启用或关闭Windows功能&lt;/code&gt;检查是否启用win10子系统和虚拟机功能。&lt;/li&gt;
+  &lt;li&gt;下载Linux内核更新程序&lt;a href=&quot;https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi&quot;&gt;x64版本&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;将WSL2设置为默认版本
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wsl --set-default-version 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;打开应用商店，安装Ubuntu。&lt;/li&gt;
+  &lt;li&gt;安装成功，检查版本是否为version 2。&lt;br /&gt;
+&lt;img src=&quot;/images/resources/04fee92127d34205a892d9d25760d847.png&quot; alt=&quot;&quot; /&gt;
+    &lt;h3 id=&quot;安装gui&quot;&gt;安装GUI&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;更新系统
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt -y upgrade
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;安装xfce4
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install xrdp
+sudo apt-get install xfce4
+sudo apt-get install xfce4-goodies
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;修改配置文件
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/max_bpp=32/#max_bpp=32\nmax_bpp=128/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/xserverbpp=24/#xserverbpp=24\nxserverbpp=128/g' /etc/xrdp/xrdp.ini
+echo xfce4-session &amp;gt; ~/.xsession
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;编辑&lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/xrdp/startwm.sh&lt;/code&gt;文件
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo nano /etc/xrdp/startwm.sh
+  # 注释下面两行
+#test -x /etc/X11/Xsession &amp;amp;&amp;amp; exec /etc/X11/Xsession
+#exec /bin/sh /etc/X11/Xsession
+  # 添加下面两行
+# xfce
+startxfce4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;启动xrdp
+&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo /etc/init.d/xrdp start&lt;/code&gt;
+    &lt;h3 id=&quot;打开window远程桌面连接&quot;&gt;打开window远程桌面连接&lt;/h3&gt;
+    &lt;p&gt;输入&lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:3390&lt;/code&gt;, 输入用户名密码即可登录。&lt;/p&gt;
+    &lt;h3 id=&quot;常见问题&quot;&gt;常见问题&lt;/h3&gt;
+    &lt;p&gt;Q. 浏览器打不开出现一下错误&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Failed to execute to default Web Browser.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;A. 重新安装&lt;code class=&quot;highlighter-rouge&quot;&gt;firefox&lt;/code&gt;浏览器
+&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install firefox&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Fri, 08 Jan 2021 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2021/01/win10_install_ubuntu/</link>
+        <guid isPermaLink="true">http://localhost:4000/2021/01/win10_install_ubuntu/</guid>
+        
+        <category>ubuntu</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Win10安装Ubuntu子系统</title>
+        <description>&lt;h3 id=&quot;介绍&quot;&gt;介绍&lt;/h3&gt;
+&lt;p&gt;在win10系统上安装Ubuntu子系统及GUI。&lt;/p&gt;
+&lt;h3 id=&quot;安装ubuntu子系统&quot;&gt;安装Ubuntu子系统&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;以管理员身份打开PowerShell&lt;/li&gt;
+  &lt;li&gt;为Linux启用win10子系统
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;启用虚拟机功能
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;重启计算机，打开&lt;code class=&quot;highlighter-rouge&quot;&gt;启用或关闭Windows功能&lt;/code&gt;检查是否启用win10子系统和虚拟机功能。&lt;/li&gt;
+  &lt;li&gt;下载Linux内核更新程序&lt;a href=&quot;https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi&quot;&gt;x64版本&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;将WSL2设置为默认版本
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wsl --set-default-version 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;打开应用商店，安装Ubuntu。&lt;/li&gt;
+  &lt;li&gt;安装成功，检查版本是否为version 2。&lt;br /&gt;
+&lt;img src=&quot;/images/resources/04fee92127d34205a892d9d25760d847.png&quot; alt=&quot;&quot; /&gt;
+    &lt;h3 id=&quot;安装gui&quot;&gt;安装GUI&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;更新系统
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt -y upgrade
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;安装xfce4
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install xrdp
+sudo apt-get install xfce4
+sudo apt-get install xfce4-goodies
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;修改配置文件
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/max_bpp=32/#max_bpp=32\nmax_bpp=128/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/xserverbpp=24/#xserverbpp=24\nxserverbpp=128/g' /etc/xrdp/xrdp.ini
+echo xfce4-session &amp;gt; ~/.xsession
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;编辑&lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/xrdp/startwm.sh&lt;/code&gt;文件
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo nano /etc/xrdp/startwm.sh
+  # 注释下面两行
+#test -x /etc/X11/Xsession &amp;amp;&amp;amp; exec /etc/X11/Xsession
+#exec /bin/sh /etc/X11/Xsession
+  # 添加下面两行
+# xfce
+startxfce4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;启动xrdp
+&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo /etc/init.d/xrdp start&lt;/code&gt;
+    &lt;h3 id=&quot;打开window远程桌面连接&quot;&gt;打开window远程桌面连接&lt;/h3&gt;
+    &lt;p&gt;输入&lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:3390&lt;/code&gt;, 输入用户名密码即可登录。&lt;/p&gt;
+    &lt;h3 id=&quot;常见问题&quot;&gt;常见问题&lt;/h3&gt;
+    &lt;p&gt;Q. 浏览器打不开出现一下错误&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Failed to execute to default Web Browser.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;A. 重新安装&lt;code class=&quot;highlighter-rouge&quot;&gt;firefox&lt;/code&gt;浏览器
+&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install firefox&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Fri, 08 Jan 2021 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2021/01/win10_install_ubuntu/</link>
+        <guid isPermaLink="true">http://localhost:4000/2021/01/win10_install_ubuntu/</guid>
+        
+        <category>ubuntu</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Win10安装Ubuntu子系统</title>
+        <description>&lt;h3 id=&quot;介绍&quot;&gt;介绍&lt;/h3&gt;
 </description>
         <pubDate>Fri, 08 Jan 2021 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2021/01/jekyll_tutorials/</link>
         <guid isPermaLink="true">http://localhost:4000/2021/01/jekyll_tutorials/</guid>
+        
+        <category>jekyll</category>
         
         
       </item>
@@ -217,7 +384,7 @@ H6 :###### Header 6    &lt;br /&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;3-绘制表格&quot;&gt;3. 绘制表格&lt;/h4&gt;
+&lt;h3 id=&quot;3-绘制表格&quot;&gt;3. 绘制表格&lt;/h3&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
