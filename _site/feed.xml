@@ -5,8 +5,8 @@
     <description>所见即所得~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 15 Jan 2021 22:33:04 +0800</pubDate>
-    <lastBuildDate>Fri, 15 Jan 2021 22:33:04 +0800</lastBuildDate>
+    <pubDate>Fri, 15 Jan 2021 22:45:01 +0800</pubDate>
+    <lastBuildDate>Fri, 15 Jan 2021 22:45:01 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -86,6 +86,11 @@ startxfce4
 &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install firefox&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h3 id=&quot;参考链接&quot;&gt;参考链接&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=IL7Jd9rjgrM&amp;amp;ab_channel=DavidBombal&quot;&gt;1. https://www.youtube.com/watch?v=IL7Jd9rjgrM&amp;amp;ab_channel=DavidBombal&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://docs.microsoft.com/en-us/windows/wsl/install-win10&quot;&gt;2. https://docs.microsoft.com/en-us/windows/wsl/install-win10&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://dev.to/darksmile92/linux-on-windows-wsl-with-desktop-environment-via-rdp-522g&quot;&gt;3. https://dev.to/darksmile92/linux-on-windows-wsl-with-desktop-environment-via-rdp-522g&lt;/a&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 08 Jan 2021 00:00:00 +0800</pubDate>

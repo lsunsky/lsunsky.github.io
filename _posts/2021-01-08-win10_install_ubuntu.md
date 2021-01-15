@@ -66,4 +66,8 @@ Failed to execute to default Web Browser.
 A. 重新安装`firefox`浏览器
 ```sudo apt-get install firefox```
 
+### 参考链接
+[1. https://www.youtube.com/watch?v=IL7Jd9rjgrM&ab_channel=DavidBombal](https://www.youtube.com/watch?v=IL7Jd9rjgrM&ab_channel=DavidBombal)  
+[2. https://docs.microsoft.com/en-us/windows/wsl/install-win10](https://docs.microsoft.com/en-us/windows/wsl/install-win10)  
+[3. https://dev.to/darksmile92/linux-on-windows-wsl-with-desktop-environment-via-rdp-522g](https://dev.to/darksmile92/linux-on-windows-wsl-with-desktop-environment-via-rdp-522g)  
 
