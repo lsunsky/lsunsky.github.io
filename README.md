@@ -1,3 +1,6 @@
-#### 感谢   
-
-本博客在[Vno Jekyll](https://github.com/onevcat/vno-jekyll)基础上修改的。  
+## Aweasome Learning
+### 深度学习(Deep Learning)
+### 自然语言处理(NLP)
+### TensorFlow
+[x] Getting started with Tensorflow2
+[x] customising models Tensorflow2
